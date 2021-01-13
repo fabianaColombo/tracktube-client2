@@ -61,8 +61,8 @@ export default function SignUp() {
         <Form.Group controlId="formBasicYoutubeId">
           <Form.Label>Your YouTube ID</Form.Label>
           <Form.Control
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            value={youtubeId}
+            onChange={(event) => setYoutubeId(event.target.value)}
             type="text"
             placeholder="UCrOQBmKjLa0QMNCgiUr4DZs"
             required
