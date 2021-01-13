@@ -14,7 +14,9 @@ export default function LoggedIn() {
         <b>Logged In as: </b>
         {user.name}
       </Nav.Item>
-      <Button onClick={() => dispatch(logOut())}>Logout</Button>
+      <Button variant="dark" onClick={() => dispatch(logOut())}>
+        Logout
+      </Button>
     </>
   );
 }
