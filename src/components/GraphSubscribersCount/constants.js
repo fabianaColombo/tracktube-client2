@@ -1,3 +1,4 @@
+import Highcharts from "highcharts";
 export const baseOptions = {
   chart: {
     type: "line",
@@ -7,7 +8,7 @@ export const baseOptions = {
   },
   subtitle: {
     text:
-      "Explore the data, see the differences in the number of subscribers for different YouTube channels. Save view and build number of subscribers over time for better analysis of your competitors.",
+      "Explore the data and spot the differences in the number of subscribers for different YouTube channels.",
   },
   credits: {
     enabled: false,
@@ -32,9 +33,21 @@ export const baseOptions = {
     },
   },
   xAxis: {
+    type: "datetime",
     title: {
-      text: "channel",
+      text: "days",
     },
-    tickInterval: 1,
+
+    labels: {
+      formatter: function () {
+        return Highcharts.dateFormat("%Y-%m-%e", this.value);
+      },
+    },
+    ordinal: true,
+    lineWidth: 1,
+    minorGridLineWidth: 1,
+    minorTickInterval: "auto",
+    showLastLabel: true,
+    endOnTick: false,
   },
 };

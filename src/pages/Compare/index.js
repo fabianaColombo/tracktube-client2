@@ -8,12 +8,26 @@ import Button from "react-bootstrap/Button";
 import GraphSubscribersCount from "../../components/GraphSubscribersCount";
 
 import { fetchExplore } from "../../store/explore/actions";
-import { selectExploreData } from "../../store/explore/selectors";
+import { selectExplore } from "../../store/explore/selectors";
 
 export default function Compare() {
   const [id1, setId1] = useState("");
   const [id2, setId2] = useState("");
   const [id3, setId3] = useState("");
+  // const [series, setSeries] = useState([
+  //   {
+  //     name: "channel 1",
+  //     data: [{ x: 1610900781000, y: 1200 }],
+  //   },
+  //   {
+  //     name: "channel 2",
+  //     data: [{ x: 1610900781000, y: 110 }],
+  //   },
+  //   {
+  //     name: "channel 3",
+  //     data: [{ x: 1610900781000, y: 1000 }],
+  //   },
+  // ]);
 
   const dispatch = useDispatch();
 
@@ -28,13 +42,10 @@ export default function Compare() {
     setId3("");
   };
 
-  // const explore = useSelector(selectExploreData);
-  // console.log("this is data from explore", explore);
-
   return (
     <>
-      <Container>
-        <Form as={Row} inline>
+      <Container fluid>
+        <Form as={Row} inline className="justify-content-md-center">
           <Form.Group>
             <Col>
               <Form.Control
@@ -42,6 +53,7 @@ export default function Compare() {
                 placeholder="YouTube ID"
                 type="id1"
                 onChange={(event) => setId1(event.target.value)}
+                required
               />
             </Col>
             vs
@@ -51,6 +63,7 @@ export default function Compare() {
                 placeholder="YouTube ID"
                 type="id2"
                 onChange={(event) => setId2(event.target.value)}
+                required
               />
             </Col>
             vs
@@ -60,6 +73,7 @@ export default function Compare() {
                 placeholder="YouTube ID"
                 type="id3"
                 onChange={(event) => setId3(event.target.value)}
+                required
               />
             </Col>
           </Form.Group>
@@ -70,7 +84,15 @@ export default function Compare() {
       </Container>
 
       <Container width="90%" className="mt-5">
-        <GraphSubscribersCount />
+        <GraphSubscribersCount series={useSelector(selectExplore)} />
+      </Container>
+
+      <Container style={{ textAlign: "center" }} className="mt-5">
+        <Button variant="success">SAVE AND TRACK</Button>
+        <p>
+          Save channels and start tracking their number of subscribers over time
+          for better analysis of your competitors.
+        </p>
       </Container>
     </>
   );

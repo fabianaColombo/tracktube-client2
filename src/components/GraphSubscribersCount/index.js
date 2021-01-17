@@ -3,19 +3,16 @@ import { baseOptions } from "./constants";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-export default function GraphSubscribersCount() {
-  const [series, setSeries] = useState([
-    { name: "S", data: [23, 32, 42] },
-    { name: "R", data: [45, 54, 64] },
-  ]);
-
+export default function GraphSubscribersCount(props) {
   const options = {
     ...baseOptions,
-    series,
+    series: props.series,
   };
   return (
-    <div>
-      <HighchartsReact highcharts={Highcharts} options={options} />
-    </div>
+    <>
+      <div>
+        <HighchartsReact highcharts={Highcharts} options={options} />
+      </div>
+    </>
   );
 }
