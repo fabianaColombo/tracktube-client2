@@ -1,9 +1,15 @@
 import { apiUrl } from "../../config/constants";
 import Axios from "axios";
+import { selectToken } from "../user/selectors";
 
 export const exploreFetched = (channels) => ({
   type: "explore/exploreFetched",
   payload: channels,
+});
+
+export const favoriteCreated = (newFavorite) => ({
+  type: "explore/favoriteCreated",
+  payload: newFavorite,
 });
 
 export const fetchExplore = (id1, id2, id3) => {
@@ -17,6 +23,29 @@ export const fetchExplore = (id1, id2, id3) => {
       dispatch(exploreFetched(response.data));
     } catch (error) {
       console.log(error);
+    }
+  };
+};
+
+export const saveToFavorite = (id) => {
+  return async (dispatch, getState) => {
+    const token = selectToken(getState());
+    console.log("user token", token);
+    console.log("this is youtube id", id);
+    try {
+      const response = await Axios.post(
+        `${apiUrl}/saveChannelToFavorite`,
+        { id },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log("response from save favorite", response.data.data);
+      dispatch(favoriteCreated(response.data.data));
+    } catch (error) {
+      console.log(error.message);
     }
   };
 };
