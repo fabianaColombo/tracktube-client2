@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { baseOptions } from "./constants";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
