@@ -12,6 +12,11 @@ export const favoriteCreated = (newFavorite) => ({
   payload: newFavorite,
 });
 
+export const favoriteChecked = (ids) => ({
+  type: "explore/favoriteChecked",
+  payload: ids,
+});
+
 export const fetchExplore = (id1, id2, id3) => {
   return async (dispatch, getState) => {
     try {
@@ -44,6 +49,23 @@ export const saveToFavorite = (id) => {
       );
       console.log("response from save favorite", response.data.data);
       dispatch(favoriteCreated(response.data.data));
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+};
+
+export const favoriteCheck = () => {
+  return async (dispatch, getState) => {
+    const token = selectToken(getState());
+    try {
+      const response = await Axios.get(`${apiUrl}/favoriteCheckAndUpdate`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log("response from action check favorites", response);
+      dispatch(favoriteChecked(response.data.favoriteWithSubscriber));
     } catch (error) {
       console.log(error.message);
     }

@@ -7,38 +7,30 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import GraphSubscribersCount from "../../components/GraphSubscribersCount";
 
-import { fetchExplore, saveToFavorite } from "../../store/explore/actions";
+import {
+  fetchExplore,
+  saveToFavorite,
+  favoriteCheck,
+} from "../../store/explore/actions";
 import { selectExplore } from "../../store/explore/selectors";
 
 export default function Compare() {
   const initialStateIds = {
-    id1: "UCJ12sWRTfduf-iBDHPNxbww",
-    id2: "UCMOB6uDg7e-h8OuCw8dK2_Q",
-    id3: "UCthbIFAxbXTTQEC7EcQvP1Q",
+    id1: "",
+    id2: "",
+    id3: "",
   };
   const [ids, setIds] = useState(initialStateIds);
-  // const [id2, setId2] = useState("");
-  // const [id3, setId3] = useState("");
-  // const [series, setSeries] = useState([
-  //   {
-  //     name: "Example channel 1",
-  //     data: [{ x: 1610900781000, y: 1200 }],
-  //   },
-  //   {
-  //     name: "Example channel 2",
-  //     data: [{ x: 1610900781000, y: 110 }],
-  //   },
-  //   {
-  //     name: "Example channel 3",
-  //     data: [{ x: 1610900781000, y: 1000 }],
-  //   },
-  // ]);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(favoriteCheck());
+  }, [dispatch]);
 
   const onChangeHandler = (event) => {
     setIds({ ...ids, [event.target.name]: event.target.value });
   };
-
-  const dispatch = useDispatch();
 
   const onSubmitHandler = (event) => {
     console.log("hello");
@@ -46,14 +38,11 @@ export default function Compare() {
 
     dispatch(fetchExplore(ids.id1, ids.id2, ids.id3));
 
-    setIds(initialStateIds);
+    //setIds(initialStateIds);
   };
 
-  // const selectExploreData = useSelector(selectExplore);
-  // const exploreIds = selectExploreData.map((channel) => ({
-  //   youtubeId: channel.id[0],
-  // }));
-  //console.log("this is ids from explore", exploreIds);
+  const selectExploreIds = useSelector(selectExplore);
+  console.log("this is select explore", selectExploreIds);
 
   const save = () => {
     console.log("this is id1 in save function", ids.id1);
