@@ -1,0 +1,24 @@
+.favorite-nav-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+  cursor: pointer;
+  :hover {
+    background-color: rgb(221, 218, 218);
+  }
+  > :last-child {
+    margin-right: 0;
+  }
+}
+
+.favorite-nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 32px;
+  border: 2px solid rgb(199, 196, 196);
+  border-radius: 5px;
+  width: 250px;
+  padding: 16px;
+  box-shadow: 0 2px 4px grey;
+}
