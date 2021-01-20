@@ -54,6 +54,7 @@ export default function GlobalStats(props) {
       <div className="title">
         <h2>
           <a
+            rel="noopener noreferrer"
             target="_blank"
             href={`https://www.youtube.com/channel/${channel.youtubeId}`}
           >
