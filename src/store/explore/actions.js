@@ -55,6 +55,11 @@ export const saveToFavorite = (id) => {
         }
       );
       console.log("response from save favorite", response.data.data);
+      if (response) {
+        dispatch(
+          setMessage("success", true, "Your favorites were saved successfully")
+        );
+      }
       dispatch(favoriteCreated(response.data.data));
     } catch (error) {
       console.log(error.message);
