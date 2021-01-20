@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import FavoritesNav from "../../components/FavoritesNav";
-import GlobalStats from "../../components/GlobalStats";
+import FavoritesNav from "../../components/FavoriteNav/FavoritesNav";
+import GlobalStats from "../../components/GlobalStats/GlobalStats";
 
 import { fetchFavoriteStats } from "../../store/favoriteStats/actions";
 import { selectFavoriteStats } from "../../store/favoriteStats/selectors";
