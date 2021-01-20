@@ -18,7 +18,7 @@ export const favoriteChecked = (ids) => ({
   payload: ids,
 });
 
-export const fetchExplore = (id1, id2, id3) => {
+export const fetchExplore = (ids) => {
   return async (dispatch, getState) => {
     if (!id1 || !id2 || !id3) {
       return dispatch(
@@ -28,7 +28,7 @@ export const fetchExplore = (id1, id2, id3) => {
 
     try {
       const response = await Axios.get(
-        `${apiUrl}/explore/${id1}/${id2}/${id3}`
+        `${apiUrl}/explore/${ids.id1}/${ids.id2}/${ids.id3}`
       );
       console.log("response from actions explore", response.data);
       dispatch(exploreFetched(response.data));

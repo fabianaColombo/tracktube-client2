@@ -36,7 +36,7 @@ export default function Compare() {
     console.log("hello");
     event.preventDefault();
 
-    dispatch(fetchExplore(ids.id1, ids.id2, ids.id3));
+    dispatch(fetchExplore(ids));
 
     //setIds(initialStateIds);
   };
