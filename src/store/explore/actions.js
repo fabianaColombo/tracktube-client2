@@ -20,7 +20,7 @@ export const favoriteChecked = (ids) => ({
 
 export const fetchExplore = (ids) => {
   return async (dispatch, getState) => {
-    if (!id1 || !id2 || !id3) {
+    if (!ids.id1 || !ids.id2 || !ids.id3) {
       return dispatch(
         setMessage("danger", true, "You must provide 3 YouTube ids")
       );
