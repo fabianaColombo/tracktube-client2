@@ -1,6 +1,7 @@
 .favorite-nav-container {
   display: flex;
   justify-content: center;
+  margin-top: 64px;
   margin-bottom: 64px;
   cursor: pointer;
   :hover {
@@ -16,9 +17,9 @@
   flex-direction: column;
   align-items: center;
   margin-right: 32px;
-  border: 2px solid rgb(199, 196, 196);
+  border: 2px solid white;
   border-radius: 5px;
   width: 250px;
   padding: 16px;
-  box-shadow: 0 2px 4px grey;
+  box-shadow: 0 4px 6px rgb(245, 148, 148);
 }

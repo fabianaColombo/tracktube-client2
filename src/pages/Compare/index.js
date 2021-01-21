@@ -31,16 +31,9 @@ export default function Compare() {
   };
 
   const onSubmitHandler = (event) => {
-    //console.log("hello");
     event.preventDefault();
-
     dispatch(fetchExplore(ids));
-
-    //setIds(initialStateIds);
   };
-
-  //const selectExploreIds = useSelector(selectExplore);
-  //console.log("this is select explore", selectExploreIds);
 
   const save = () => {
     console.log("this is id1 in save function", ids.id1);
@@ -73,38 +66,45 @@ export default function Compare() {
   const saveButtonState =
     selectFavoritesCheck.length === 0 ? (
       <>
-        <Row className="row justify-content-center mt-3">
-          <Button variant="success" onClick={save}>
-            SAVE AND TRACK
-          </Button>
-        </Row>
-        <Row className="row justify-content-center mt-3">
-          <p>
-            Save channels and start tracking their number of subscribers over
-            time for better analysis of your competitors.
-          </p>
-        </Row>
+        <Container width="60%" className="mt-3">
+          <Row className="row justify-content-center mt-3">
+            <Button variant="success" onClick={save}>
+              SAVE AND TRACK
+            </Button>
+          </Row>
+          <Row className="row justify-content-center mt-3">
+            <p>
+              Save channels and start tracking their number of subscribers over
+              time for better analysis of your competitors.
+            </p>
+          </Row>
+        </Container>
       </>
     ) : (
       <>
-        <Row className="row justify-content-center mt-3">
-          <Button variant="danger" onClick={save}>
-            UPDATE AND RESET
-          </Button>
-        </Row>
-        <Row className="justify-content-center mt-3">
-          <p>
-            Update channels and we will overwrite your previously saved
-            channels. This action will also affect your channel options on the
-            Stats page.
-            <br />
-            Feel free to explore more channels, we won't stop tracking your
-            favorite channels unless you decide to 'update and reset'.
-            <br />
-            To go back to your saved channels graph with historical data, just
-            refresh the page.
-          </p>
-        </Row>
+        <Container
+          width="60%"
+          className="mt-3 justify-content-center align-text-center"
+        >
+          <Row className="row justify-content-center mt-3">
+            <Button variant="danger" onClick={save}>
+              UPDATE AND RESET
+            </Button>
+          </Row>
+          <Row className="justify-content-center mt-3">
+            <p>
+              Update channels and we will overwrite your previously saved
+              channels. This action will also affect your channel options on the
+              Stats page.
+              <br />
+              Feel free to explore more channels, we won't stop tracking your
+              favorite channels unless you decide to 'update and reset'.
+              <br />
+              To go back to your saved channels graph with historical data, just
+              refresh the page.
+            </p>
+          </Row>
+        </Container>
       </>
     );
 
@@ -143,7 +143,7 @@ export default function Compare() {
               />
             </Col>
           </Form.Group>
-          <Button type="submit" variant="danger" onClick={onSubmitHandler}>
+          <Button type="submit" variant="dark" onClick={onSubmitHandler}>
             Explore!
           </Button>
         </Form>

@@ -1,21 +1,23 @@
 import React from "react";
 import "./GlobalStats.scss";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
 export default function GlobalStats(props) {
   const channel = props.channel;
 
   if (!channel) {
     return (
-      <div className="statsChannelTitle">
-        <div>
+      <Container>
+        <Row className="justify-content-center mt-5">
           <h2>We are trying to fetch your favorite channels...</h2>
           <p>
             If you haven't saved any channels in the Compare and Explore page,
             go back and save your favorite channels, this way we can display
             their stats here.
           </p>
-        </div>
-      </div>
+        </Row>
+      </Container>
     );
   }
 
