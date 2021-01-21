@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Container, Jumbotron } from "react-bootstrap";
@@ -37,11 +38,7 @@ export default function Navigation() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Jumbotron as="center" fluid>
-        <Container>
-          <h1>TrackTube</h1>
-        </Container>
-      </Jumbotron>
+      <Jumbotron fluid></Jumbotron>
     </div>
   );
 }

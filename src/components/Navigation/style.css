@@ -1,0 +1,13 @@
+.jumbotron {
+  background-image: url("./tracktube-header-logo.png");
+  background-color: #e93f33 !important;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.jumbotron h1 {
+  justify-content: center;
+}
