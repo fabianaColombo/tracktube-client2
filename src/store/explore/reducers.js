@@ -12,11 +12,6 @@ export default (state = initialState, action) => {
       //console.log("this is new favorite", newFavorite);
       return newFavorite;
     }
-    case "explore/favoriteChecked": {
-      const favoritesWithData = action.payload;
-      console.log("this is favorite with data", favoritesWithData);
-      return favoritesWithData;
-    }
 
     default: {
       return state;
