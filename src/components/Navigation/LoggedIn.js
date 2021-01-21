@@ -23,7 +23,7 @@ export default function LoggedIn() {
           history.push("/");
         }}
       >
-        Logout
+        Log out
       </Button>
     </>
   );
