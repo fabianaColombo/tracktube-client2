@@ -16,7 +16,6 @@ export const favoriteCheck = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      //console.log("response from action check favorites", response);
       dispatch(favoriteChecked(response.data.favoriteWithSubscriber));
     } catch (error) {
       console.log(error.message);

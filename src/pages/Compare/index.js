@@ -43,13 +43,10 @@ export default function Compare() {
   };
 
   const selectFavoritesCheck = useSelector(selectExploreFavorites);
-  console.log("favorite check", selectFavoritesCheck);
 
   const selectExploreCheck = useSelector(selectExplore);
-  console.log("explore check", selectExploreCheck);
 
   const favoriteExploreCheck = () => {
-    console.log("hello");
     if (selectFavoritesCheck.length > 0 && selectExploreCheck.length > 0) {
       return selectExploreCheck;
     }
