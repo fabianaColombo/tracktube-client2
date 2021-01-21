@@ -22,6 +22,7 @@ export default function Home() {
         className="mt-3 justify-content-center"
       >
         <iframe
+          title="explainer video on Home Page"
           width="80%"
           height="500px"
           src="https://www.youtube.com/embed/6P3Yol_9dDs"
