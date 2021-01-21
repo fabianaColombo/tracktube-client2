@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { Container, Jumbotron } from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { selectToken } from "../../store/user/selectors";
 import NavbarItem from "./NavbarItem";
@@ -29,7 +29,7 @@ export default function Navigation() {
 
   return (
     <div>
-      <Navbar bg="white" expand="lg">
+      <Navbar expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav style={{ width: "100%" }} fill>

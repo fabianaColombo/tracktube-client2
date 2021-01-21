@@ -3,11 +3,27 @@
   background-color: #e93f33 !important;
   background-repeat: no-repeat;
   background-position: center;
-
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 150px;
 }
 
 .jumbotron h1 {
   justify-content: center;
+}
+
+.navbar {
+  background-color: #e93f33 !important;
+  color: white;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: lightgray !important;
+}
+
+.nav-link:active {
+  color: gray !important;
 }
