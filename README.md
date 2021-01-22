@@ -1,6 +1,6 @@
 # TrackTube
 
-![tracktube app example image](https://raw.githubusercontent.com/master/tracktube-git-redme-image.png)
+<img src="./tracktube-git-redme-image.png">
 
 TrackTube is and analycis tool for YouTube stats. 
 
