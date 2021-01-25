@@ -26,8 +26,18 @@ Professional and amateur youtubers can use TrackTube to monitor and compare thei
 
 ## Core Concepts and Goals
 
-1. A
-2. B
+The main goal of this project was to have a functional MVP from ideation to deployment in 2 weeks. The process included:
+- designing wireframes
+- designing database models
+- creating user stories
+- coding backend and frontend of the app 
+- deploying a full functional MVP
+
+Some of the concepts used:
+- implementing database model
+- injesting third-party API
+- using external library for chart (Highcharts)
+- using git and branches 
 
 ## Features and Pages
 ### Home
