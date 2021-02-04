@@ -8,16 +8,6 @@ import store from "./store";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TagManager from "react-gtm-module";
-
-const tagManagerArgs = {
-  gtmId: "GTM-W6MCBJ8",
-  events: {
-    homeCTA: "signup-home-cta",
-  },
-};
-
-TagManager.initialize(tagManagerArgs);
 
 ReactDOM.render(
   <Router>
