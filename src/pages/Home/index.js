@@ -2,6 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import TagManager from "react-gtm-module";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         className="mt-3 justify-content-center align-text-center"
       >
         <Row className="row justify-content-center mt-3 mb-3">
-          <Button href="/signup" variant="success">
+          <Button href="/signup" variant="success" className="signup-home-cta">
             Sign Up for Free
           </Button>
         </Row>
