@@ -11,7 +11,7 @@ export default function Home() {
         className="mt-3 justify-content-center align-text-center"
       >
         <Row className="row justify-content-center mt-3 mb-3">
-          <Button href="/signup" variant="success">
+          <Button href="/signup" variant="success" className="signup-home-cta">
             Sign Up for Free
           </Button>
         </Row>
